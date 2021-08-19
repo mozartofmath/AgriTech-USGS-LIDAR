@@ -8,7 +8,8 @@ class Fetcher:
         try:
             f = open(filename, 'r')
         except FileNotFoundError:
-            print('json File not Found')
+            import os
+            print('json File not Found', os.getcwd())
             logging.info('json File not Found')
         self.pipeline = json.load(f)
         f.close()
