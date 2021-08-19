@@ -4,7 +4,7 @@ import logging
 
 class Fetcher:
     def __init__(self):
-        filename = '../pipeline.json'
+        filename = 'pipeline.json'
         try:
             f = open(filename, 'r')
         except FileNotFoundError:
