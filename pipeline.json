@@ -12,32 +12,23 @@
             "tag": "nonoise"
         },
         {
-            "assignment": "Classification[:]=0",
-            "tag": "wipeclasses",
-            "type": "filters.assign"
-        },
-        {
             "out_srs": "EPSG:26915",
-            "tag": "reprojectUTM",
-            "type": "filters.reprojection"
+            "type": "filters.reprojection",
+            "tag": "reprojection"
         },
         {
-            "tag": "groundify",
-            "type": "filters.smrf"
-        },
-        {
-            "limits": "Classification[2:2]",
+            "limits": "Classification![2:7], Classification![9:9]",
             "type": "filters.range",
             "tag": "classify"
         },
         {
-            "filename": "data/farm.laz",
-            "inputs": [ "classify" ],
+            "filename": "farm.laz",
+            "inputs": [ "reprojection" ],
             "tag": "writerslas",
             "type": "writers.las"
         },
         {
-            "filename": "data/farm.tif",
+            "filename": "farm.tif",
             "gdalopts": "tiled=yes,     compress=deflate",
             "inputs": [ "writerslas" ],
             "nodata": -9999,
