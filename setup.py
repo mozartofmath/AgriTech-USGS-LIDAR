@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 with open('README.md') as readme_file:
     readme = readme_file.read()
 
-requirements = ['pandas>=1.1.0', 'numpy>=1.19.0', ]
+requirements = ['numpy>=1.19.0', ]
 
 test_requirements = ['pytest>=3', ]
 
@@ -24,7 +24,7 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
     ],
-    description="TellCo Data Analysis",
+    description="LIDAR_Data_Fetcher_Visualizer",
     install_requires=requirements,
     long_description=readme,
     include_package_data=True,
@@ -33,7 +33,7 @@ setup(
     packages=find_packages(include=['scripts', 'scripts.*']),
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://github.com/mozartofmath/10academyWeek1',
+    url='https://github.com/mozartofmath/AgriTech-USGS-LIDAR',
     version='0.1.0',
     zip_safe=False,
 )
