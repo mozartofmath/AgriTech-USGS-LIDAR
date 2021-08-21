@@ -17,10 +17,11 @@ USGS (United States Geologic Survey) is developing a 3D Elevation Program (3DEP)
 <p>
 To install the package type the following commands
 </p>
+
 ```
-	git clone https://github.com/mozartofmath/AgriTech-USGS-LIDAR.git
-	cd AgriTech-USGS-LIDAR/usgslidar
-	pip install .
+git clone https://github.com/mozartofmath/AgriTech-USGS-LIDAR.git
+cd AgriTech-USGS-LIDAR/usgslidar
+pip install .
 ```
 
 ## Code
