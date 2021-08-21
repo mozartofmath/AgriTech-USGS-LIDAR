@@ -12,18 +12,20 @@ Height Map of Earth's surface (including water and ice) in equirectangular proje
 <p>
 USGS (United States Geologic Survey) is developing a 3D Elevation Program (3DEP) to keep up with growing needs for high quality topographic data. 3DEP is a collection of enhanced elevation data in the form of high quality LiDAR data over the conterminous United States, Hawaii, and the U.S. territories. There are three bare earth DEM layers in 3DEP which are nationally seamless at the resolution of 1/3, 1, and 2 arcseconds.
 </p>
-Getting Started
+
+## Getting Started
+<p>
 To install the package type the following commands
+</p>
 ```
 	git clone https://github.com/mozartofmath/AgriTech-USGS-LIDAR.git
 	cd AgriTech-USGS-LIDAR/usgslidar
 	pip install .
 ```
-</p>
 
 ## Code
 The code of our analysis can be found in the **notebooks** folder. The data loading and visualization can be found in the **Fetcher.ipynb** jupyter notebook. The **scripts** folder contains the data loading and preprocessing functions.
 
 ## Dependencies
 To install the necessary dependencies, execute the command 
-```$ pip install -r requirements.txt"```
+```$ pip install -r requirements.txt```
