@@ -6,7 +6,18 @@ How much maize a field produces is very spatially variable. Even if the same far
  </p>
 
 ## Code
-The code of our analysis can be found in the **notebooks** folder. The data loading and visualization can be found in the **Fetcher.ipynb** jupyter notebook. The **scripts** folder contains the data loading and preprocessing functions. The pip installable module can be found in the **usgslidar** directory. 
+The code of our analysis can be found in the **notebooks** folder. The data loading and visualization can be found in the **Fetcher.ipynb** jupyter notebook. The **scripts** folder contains the data loading and preprocessing functions. 
+## pip installable package
+The pip installable module can be found in the **usgslidar** directory. 
+<p>
+To install the package type the following commands
+</p>
+
+```
+git clone https://github.com/mozartofmath/AgriTech-USGS-LIDAR.git
+cd AgriTech-USGS-LIDAR/usgslidar
+pip install .
+```
 
 ## Dependencies
 To install the necessary dependencies, execute the command 
