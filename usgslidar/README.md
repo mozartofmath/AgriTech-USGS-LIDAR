@@ -21,12 +21,45 @@ To install the package type the following commands
 ```
 git clone https://github.com/mozartofmath/AgriTech-USGS-LIDAR.git
 cd AgriTech-USGS-LIDAR/usgslidar
+pip install -r requirements.txt
 pip install .
 ```
 
-## Code
-The code of our analysis can be found in the **notebooks** folder. The data loading and visualization can be found in the **Fetcher.ipynb** jupyter notebook. The **scripts** folder contains the data loading and preprocessing functions.
+## Tutorial
+### 1. Fetch LiDAR data
+The boundary of the area is of the form `xmin, xmax, ymin, ymax`.
+This area is located in Iowa State. Therefore, we set the region as `“IA_FullState”`
+Then we set the filename of the output `.tif` and `.laz` files as `“iowa”`
 
-## Dependencies
-To install the necessary dependencies, execute the command 
-```$ pip install -r requirements.txt```
+```python
+from usgslidar.Fetcher import Fetcher
+fetcher = Fetcher()
+fetcher.set_boundary(-10425171.940, -10423171.940, 5164494.710, 5166494.710)
+fetcher.set_region('IA_FullState')
+fetcher.set_out_filename('iowa')
+fetcher.fetch()
+```
+
+### 2. Visualize 
+The plot function in the Visualizer module takes in the path to the `.tif` file 
+along with the `title` of the plot as input and plots it.
+
+
+```python
+from usgslidar.Visualizer import Visualizer
+vis = Visualizer()
+vis.plot("../iowa.tif", "Iowa")
+```
+
+### 3. Convert data to geopandas dataframe
+You can turn a `.laz` or `.las` file into a geopandas dataframe by using the GenerateDF module.
+
+
+```python
+from usgslidar.df_generator import GenerateDF
+gen = GenerateDF()
+#inputs are the path to the .laz/.las file and the coordinate system
+geo_df = gen.generate_df('../iowa.laz', 26915)
+geo_df.head()
+```
+

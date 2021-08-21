@@ -1,6 +1,6 @@
 import json
 import logging
-#import pdal
+import pdal
 
 class Fetcher:
     def __init__(self):
